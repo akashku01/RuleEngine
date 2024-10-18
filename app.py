@@ -1,13 +1,13 @@
 from flask import Flask, jsonify, request
-from flask_cors import CORS  # For handling CORS
+from flask_cors import CORS  
 import json
 
 
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for the frontend to communicate with the backend
+CORS(app)  # for the frontend to communicate with the backend
 
-# Dummy database for storing rules
+# Database for storing rules
 rules_db = [
     {"id": 1, "rule_string": "age > 30 AND department = 'Sales'", "ast": '{"type": "operator", "value": "AND", "left": {"type": "operand", "value": ["age", ">", 30]}, "right": {"type": "operand", "value": ["department", "=", "Sales"]]}'}
 ]
