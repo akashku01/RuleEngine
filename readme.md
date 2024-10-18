@@ -63,6 +63,22 @@ Before you begin, ensure you have the following installed:
 
 1. **Clone the repository:**
 
-   ```bash
+ 
    git clone https://github.com/akashku01/rule-engine.git
    cd rule-engine
+ 2.**Install the required Python dependencies:**
+
+    pip install -r requirements.txt
+ 3.**Run the Flask API:**
+    python app.py
+
+### Step 2: Setting up the Frontend (React)
+  Navigate to the React app directory:
+
+  cd rule-engine-ui
+  Install the required dependencies:
+  npm install
+  Start the React development server:
+
+   npm start
+  This will start the frontend at http://localhost:3000.  
