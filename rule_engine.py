@@ -2,8 +2,7 @@ import json
 import re
 import sqlite3
 
-# Node class to represent AST nodes
-# Node class to represent AST nodes
+
 class Node:
     def __init__(self, type, left=None, right=None, value=None):
         self.type = type  # "operator" or "operand"
@@ -20,19 +19,19 @@ class Node:
             'value': self.value  # This will preserve the tuple or list structure as is
         }
 
-    # Method to create a Node object from a dictionary
+    
     @staticmethod
     def from_dict(dct):
         left = Node.from_dict(dct['left']) if dct.get('left') else None
         right = Node.from_dict(dct['right']) if dct.get('right') else None
 
-        # Ensure that values are correctly restored as tuples for operand nodes
+        
         value = dct['value']
         if isinstance(value, list) and len(value) == 3:
-            # Ensure operand values are treated as tuples
+           
             value = tuple(value)
         elif isinstance(value, str) and value.startswith("'") and value.endswith("'"):
-            value = value[1:-1]  # Remove surrounding quotes if it's a string literal
+            value = value[1:-1] 
 
         return Node(dct['type'], left, right, value)
 
